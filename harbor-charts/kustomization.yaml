@@ -2,9 +2,9 @@
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: harbor
 
 resources:
-  - values.yaml
-
-patches:
-   - values.yaml
+  - "namespace.yaml"
+  - "Chart.yaml"
+  - "values.yaml"

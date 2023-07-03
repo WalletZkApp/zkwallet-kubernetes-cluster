@@ -1,7 +1,0 @@
----
-
-cluster: https://kubernetes.default.svc
-project: default
-global:
-  adminPassword: changeme999
-  externalURL: https://harbor.walletzk.app

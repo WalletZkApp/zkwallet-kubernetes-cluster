@@ -7,10 +7,4 @@ resources:
   - values.yaml
 
 patches:
-  - target:
-    group: argoproj.io
-    version: v1alpha1
-    kind: Application
-    name: harbor
-  patch: |-
    - values.yaml

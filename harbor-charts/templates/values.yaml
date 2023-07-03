@@ -1,0 +1,5 @@
+---
+
+global:
+  adminPassword: changeme999
+  externalURL: https://harbor.walletzk.app

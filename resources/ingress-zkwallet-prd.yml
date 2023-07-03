@@ -1,0 +1,26 @@
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: default-ingress
+  namespace: default
+spec:
+  rules:
+    - host: zkwallet-prd.walletzk.app
+      http:
+        paths:
+          - path: /tea
+            pathType: Prefix
+            backend:
+              service:
+                name: tea-svc
+                port:
+                  number: 80
+          - path: /coffee
+            pathType: Prefix
+            backend:
+              service:
+                name: coffee-svc
+                port:
+                  number: 80

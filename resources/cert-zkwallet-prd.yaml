@@ -1,0 +1,15 @@
+---
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: zkwallet-prd-cert
+  namespace: default
+spec:
+  commonName: zkwallet-prd.walletzk.app
+  secretName: zkwallet-secret
+  dnsNames:
+    - zkwallet-prd.walletzk.app
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

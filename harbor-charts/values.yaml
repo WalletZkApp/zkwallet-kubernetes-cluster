@@ -1,0 +1,9 @@
+---
+cluster: https://kubernetes.default.svc
+project: default
+global:
+  adminPassword: {{ .Merged.harbor-sealed-secrets.adminPassword }}
+  externalURL: https://harbor.walletzk.app
+  postgresql.auth.postgresPassword: {{ .Merged.harbor-sealed-secrets.postgresPassword }}
+  redis.auth.password: {{ .Merged.harbor-sealed-secrets.redisPassword }}
+  registry.credentials.username : {{ .Merged.harbor-sealed-secrets.registryCredentialUsername}}

@@ -10,6 +10,6 @@ spec:
   secretName: argocd-secret
   dnsNames:
     - argocd.walletzk.app
-  issuerRef:**Re
+  issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

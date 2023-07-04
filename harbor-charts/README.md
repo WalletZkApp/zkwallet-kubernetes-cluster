@@ -1,9 +1,17 @@
+# Scaleway Kubenertes Cluster for Harbor
 
+## Export KUBECONFIG
 ```bash
-helm repo add harbor https://charts.bitnami.com/bitnami
+export KUBECONFIG=/$HOME/Documents/WalletZkApp/Scaleway/kubeconfig-zkWallet-harbor.yaml
+```
 
-helm fetch harbor/harbor --untar
+## Add namespace
+```bash
+kubectl apply -f harbor-charts/namespace-harbor.yaml
+```
 
+## Install Harbor
+```bash
 ## If you update the username or password of registry, make sure use cli tool htpasswd to generate the bcrypt hash
     ## e.g. "htpasswd -nbBC10 $username $password"
 helm install harbor . -n harbor \

@@ -64,7 +64,7 @@ diagnosticMode:
 
 ## @param adminPassword The initial password of Harbor admin. Change it from portal after launching Harbor
 ##
-adminPassword: AgCBSqq/9/6PUr0ezMQ7ElGF12z06vZCG6lNivKjoS3Rvs4+gIZCcBYPe2qCJUyAFrIe+vnp59pOL095aV9KzNcAnotMFMDQ+P1QRXDr0K2TgIlNU9G8a9OdLuiz89K/dOFo+Ll7nMDoe5dtlUtqe1wtmplbnb9agD97L/wUuWyUbnxJEvYavmgiYhfA69Cj1G8FY7Iq4ZJdm5XLGwTt1A/g20/dzLpUiitFVJHksuvtMVY+1AnqvgcgLP78Rb7r3Oerw3hbm/4Bqj2KDRSH8AZz2dKIasbTMeMHv0Lv+YC6alUMhv9QB7vszMccqm9DKPWosBWxmdORzIOm8L+pCmIAv/e6AxR/ZzfUVSs5YEsiavFMD395cd9bDcyV1XnlskcnctxK84RaTjf6FaItqQ7KzcClT+q2YD2rKvNbVPcPKFI/k0pTB3ZlvBzY9g57VJtHDjYlub8RYAOFlViL0kah7bZ0VzBq5ZEGfUpfCagUeyTiskWFkeri/5i5aYrQpz0XJoYzcCESlq8mN+W4kB33+PD/zFXOUpRMcGbBQeGUfRerSohSucmYJscKf4UYQkGJcdLZPxeYGCFjSLUm52dcWB1RvvpbiYieJNSGvuu2xRo5Uo4zOgX/rpU4P8DNL9iwU1n9RJvcCxW5jnk4vv4qBiZg40aImUVGUIg2hCmIGQmWPaS8mbTumxHx9GIsQsZqXwUdYWcnRJAczq7m1Dcwi20gTyUp9Qf+hrvsdaI=
+adminPassword: ""
 ## @param externalURL The external URL for Harbor Core service
 ## It is used to
 ## 1) populate the docker/helm commands showed on portal
@@ -80,7 +80,7 @@ adminPassword: AgCBSqq/9/6PUr0ezMQ7ElGF12z06vZCG6lNivKjoS3Rvs4+gIZCcBYPe2qCJUyAF
 ## 4) if "exposureType" is "proxy" and "service.type" is "LoadBalancer",
 ## the "domain" should be the LoadBalancer IP
 ##
-externalURL: https://core.harbor.domain
+externalURL: https://core.harbor.walletzk.app
 ## Note: If Harbor is exposed via Ingress, the NGINX server will not be used
 ## @param proxy.httpProxy The URL of the HTTP proxy server
 ## @param proxy.httpsProxy The URL of the HTTPS proxy server
@@ -217,7 +217,7 @@ ingress:
     controller: default
     ## @param ingress.core.hostname Default host for the ingress record
     ##
-    hostname: core.harbor.domain
+    hostname: core.harbor.walletzk.app
     ## @param ingress.core.annotations [object] Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
     ## Use this parameter to set the required annotations for cert-manager, see
     ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
@@ -324,7 +324,7 @@ ingress:
     controller: default
     ## @param ingress.notary.hostname Default host for the ingress record
     ##
-    hostname: notary.harbor.domain
+    hostname: notary.harbor.walletzk.app
     ## @param ingress.notary.annotations [object] Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
     ## Use this parameter to set the required annotations for cert-manager, see
     ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
@@ -806,7 +806,7 @@ nginx:
     existingSecret: ""
     ## @param nginx.tls.commonName The common name used to generate the self-signed TLS certificates
     ##
-    commonName: core.harbor.domain
+    commonName: core.harbor.walletzk.app
   ## @param nginx.behindReverseProxy If NGINX is behind another reverse proxy, set to true
   ## if the reverse proxy already provides the 'X-Forwarded-Proto' header field.
   ## This is, for example, the case for the OpenShift HAProxy router.
@@ -3490,7 +3490,7 @@ externalDatabase:
 redis:
   enabled: true
   auth:
-    enabled: false
+    enabled: true
     ## Redis&reg; password (both master and slave). Defaults to a random 10-character alphanumeric string if not set and auth.enabled is true.
     ## It should always be set using the password value or in the existingSecret to avoid issues
     ## with Harbor.

@@ -2,6 +2,7 @@ public-key-cert.pem
 secret.yaml
 secret*.yaml
 resources/secret.yaml
+**/.install
 
 # Logs
 logs

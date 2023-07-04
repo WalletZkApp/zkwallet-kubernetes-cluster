@@ -222,14 +222,3 @@ Change the password using the command:
 ```bash
 argocd account update-password
 ```
-
-
-argocd app create harbor \
---repo https://github.com/WalletZkApp/zkwallet-kubernetes-cluster \
---path harbor-charts/overlays \
---dest-namespace harbor \
---dest-server https://kubernetes.default.svc \
---self-heal \
---sync-policy automated \
---sync-retry-limit 5 \
---revision main

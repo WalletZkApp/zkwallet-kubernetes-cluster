@@ -2,7 +2,6 @@ public-key-cert.pem
 secret.yaml
 secret*.yaml
 resources/secret.yaml
-harbor/
 
 # Logs
 logs
